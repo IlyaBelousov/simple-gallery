@@ -1,0 +1,26 @@
+.gallery {
+  position: relative;
+  padding: 45px 0;
+
+  .title {
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 45px;
+    position: relative;
+  }
+}
+
+.title:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 3px;
+  background-color: #111111;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
