@@ -1,0 +1,30 @@
+.container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.29);
+  backdrop-filter: blur(2px) contrast(.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .imageContainer {
+    display: flex;
+    flex: 50%;
+    width: 60%;
+    height: 50%;
+    background-color: rgba(17, 17, 17, 0.66);
+    box-sizing: border-box;
+  }
+
+  .image {
+    height: 100%;
+    width: 60%;
+  }
+
+  .comments {
+    height: 100%;
+  }
+}
