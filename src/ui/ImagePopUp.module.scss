@@ -120,6 +120,24 @@ $border: 1.5px solid rgba(105, 115, 126, 0.56);
     border-bottom: $border;
   }
 }
+@media (max-width: 991px) {
+  .imageContainer{
+    left: 10%;
+    right: 10%;
+  }
+}
+@media (max-width: 768px) {
+  .imageContainer{
+    left: 5%;
+    right: 5%;
+  }
+}
+@media (max-width: 530px) {
+  .imageContainer{
+    left: 0;
+    right: 0;
+  }
+}
 
 
 
