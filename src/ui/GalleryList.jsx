@@ -1,17 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './GalleryList.module.scss'
 import {ImageItem} from "./ImageItem";
+import {ImagePopUp} from "./ImagePopUp";
 
 export const GalleryList = (props) => {
-    return <div className={s.galleryList}>
-        {
-            props.images.map(image => {
-                console.log(image.download_url)
-                return (
-                    <ImageItem key={image.id} src={image.download_url} alt={image.author}/>
-                )
-            })
-        }
-    </div>
+    let [showMode, setShowMode] = useState(false)
+    let [image, setImage] = useState('')
+    const setImageCallBack = (image) => {
+        setImage(image)
+    }
+    return <>
+        {showMode && <ImagePopUp src={image} onClose={() => setShowMode(false)}/>}
+        <div className={s.galleryList}>
+
+            {
+                props.images.map(image => {
+                    return (
+                        <>
+                            <ImageItem
+                                onClick={() => {
+                                    setImageCallBack(image.download_url)
+                                    setShowMode(true)
+                                }}
+                                key={image.id}
+                                showMode={showMode}
+                                src={image.download_url}
+                                alt={image.author}/>
+                        </>
+                    )
+                })
+            }
+        </div>
+    </>
 };
 
